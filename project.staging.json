@@ -1,0 +1,20 @@
+  {
+  "name": "voteetvous",
+  "profile": "voteetvous",
+  "region": "eu-central-1",
+  "description": "",
+  "runtime": "nodejs4.3",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::852788601640:role/voteetvous_lambda_function",
+  "environment": {
+    "APP_NAME": "VoteEtVous",
+    "APP_ENV": "staging",
+  },
+  "kms_arn": "arn:aws:kms:us-east-1:852788601640:key/8fba2fcc-e268-4f07-a52b-fd4ee75b894e",
+  "handler": "lib.default",
+  "hooks": {
+    "build": "../../node_modules/.bin/eslint src && ../../node_modules/.bin/jest src && ../../node_modules/.bin/webpack  --config ../../webpack.config.js --bail",
+    "clean": "rm -fr lib"
+  }
+}

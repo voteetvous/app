@@ -1,0 +1,21 @@
+{
+  "name": "voteetvous",
+  "profile": "voteetvous",
+  "region": "eu-central-1",
+  "description": "",
+  "runtime": "nodejs6.10",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::852788601640:role/voteetvous_lambda_function",
+  "environment": {
+    "APP_NAME": "VoteEtVous",
+    "APP_ENV": "dev",
+    "APP_SECRET": "AQECAHgNvbq4rIfI7riCgHR/cc4dMMDnHdNFMLDnBW04CFjgZQAAAKIwgZ8GCSqGSIb3DQEHBqCBkTCBjgIBADCBiAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyjx5g06O9OvmSDnYICARCAWyz2jmpxsW7OH7Iuk3+yfY0BglcEvVyp/7eNJ3NJsQ2ZfiLKk3+qyhsNELtU7xyIgFaaxy6+1eWOPaHS8zpJg5/vaBaqCmMf0Z8eSYtSwZKfPpv9Yb3ca2R2YWo="
+  },
+  "kms_arn": "arn:aws:kms:eu-central-1:852788601640:key/1cbfe918-8f4a-4aa8-9e7d-493eb7a19227",
+  "handler": "lib.default",
+  "hooks": {
+    "build": " ../../node_modules/.bin/webpack  --config ../../webpack.config.js --bail",
+    "clean": "rm -fr lib"
+  }
+}
